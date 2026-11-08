@@ -1,0 +1,2 @@
+# keep every file byte-exact on checkout (submission.csv md5 and model files must not be line-ending converted)
+* -text
