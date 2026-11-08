@@ -1,30 +1,21 @@
 # AI disclosure
 
-**Team and planning.** This is a two-person entry, submitted as team **JJSS**.
+This is a two-person entry submitted as team **JJSS**. We used Claude through Claude Code for most of the implementation and experiment execution. Gemini CLI was also used during the early exploratory phase.
 
-The first author planned and directed the project:
-- set the objective of each work session;
-- defined the acceptance criteria a change had to meet before it could ship;
-- chose what to attempt and when to stop;
-- ran the main experiment track: time-reversal symmetry, reference-model evidence and score tests;
-- made every decision about what went into the final submission.
+## Human direction
 
-The second team member developed and tested three alternative tracks:
-- **sequence models**: a temporal CNN on the raw series, 0.744 alone, and 0.834 with tabular features but with a
-  rank correlation of 0.92 to the main model;
-- **training on simulated series**: 0.780 on real data, and −0.0072 when used for pre-training;
-- **alternative learners and stacking**: XGBoost, extra-trees, LightGBM variants and a seven-model stack, all with
-  rank correlations of 0.94–0.99 to the main model, and a best blend of +0.0002.
+The human briefs set the project goals, experiment plans, acceptance criteria, time budgets and stop rules. The session log also records human instructions to continue searches, resume interrupted runs and manage memory constraints.
 
-These were evaluated under the same acceptance rule and did not reach its threshold. Their results are logged in
-`results/experiment_log.csv`.
+One team member directed the modelling and experiment work using the AI tools described below. The other helped with competition submissions and worked jointly on preparing and editing the final report.
 
-**AI use.** Claude, used through Claude Code, did the heavy implementation work and ran experiments autonomously
-within the constraints we set:
-- it wrote the bulk of the feature-extraction, cross-validation, training and reporting code to specification;
-- it executed long unattended runs;
-- it proposed candidate statistical approaches, most of which were rejected on measured evidence when they failed the
-  acceptance gate;
-- it drafted this documentation.
+## AI assistance
 
-An earlier exploratory phase used the Gemini CLI in the same way.
+Claude Code wrote most of the feature-extraction, validation, training and reporting code. It proposed statistical approaches, ran long experiments, analysed results and drafted documentation. Within the human briefs, it also made implementation choices and decisions about which candidates to continue or stop.
+
+The session log records these decisions and departures from the briefs. For example, time reversal was initially described as a diagnostic expected to hurt performance. The assistant advanced it after it passed the validation criteria. Some searches were shortened or stopped because of compute limits or weak preliminary results.
+
+## Evidence and checks
+
+Experiment results are recorded in `results/experiment_log.csv`, with the session history in `results/analysis/session_log.md`. The sequence-model, simulated-data and alternative-learner tracks were tested but did not produce sufficient gains for inclusion in the final model. No ROCKET or MiniRocket result is claimed because the available records do not contain one.
+
+The repository records confirmation-fold evaluations, checks on degenerate inputs and prediction invariance, and a full rebuild that reproduced the submitted predictions. The holdout was opened four times during earlier development, so it should not be treated as an untouched final evaluation.

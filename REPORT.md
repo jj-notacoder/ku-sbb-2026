@@ -38,7 +38,7 @@ We tuned it on the real setup, reversed copies included, which settled on 1,024 
 229 leaves. We train it ten times, with seeds 0–9, and average. A flat series, whose range is below
 1e-9 × max(1, |median|), returns exactly 0.5.
 
-All feature-extraction, validation, training and reporting code is ours. LightGBM, NumPy, SciPy, pandas and
+The feature-extraction, validation, training and reporting code was developed for this entry with substantial AI assistance, as described in Section 5. LightGBM, NumPy, SciPy, pandas and
 scikit-learn are standard libraries used as they are. No public solution, pretrained weight or outside dataset was
 used.
 
@@ -47,7 +47,7 @@ used.
 We had 24,000 labelled series. On the first day, 4,800 of them were sealed away as a holdout, leaving 19,200 for
 development. A whole series is the unit throughout and is never split across folds.
 
-**How decisions were made.** Every decision used stratified 5-fold cross-validation repeated over three random
+**How decisions were made.** From v2 onward, the main acceptance evaluations used stratified 5-fold cross-validation repeated over three random
 splits (15 folds), comparing a candidate with the current best fold by fold. Two further split seeds were used only to
 confirm a change already chosen, which separates "this helped" from "this got lucky on one split"
 (`results/cv_fold_aucs_v5_v6.csv`).
@@ -61,7 +61,7 @@ tree settings. The two priors kept 82–104% of their gain when refitted on half
 boundary fingerprints. Only ten training pairs passed 0.9, all smooth near-periodic series with mixed labels, which
 we judged coincidental. No training series was related to a test series.
 
-**The acceptance rule**, fixed before results were seen:
+**The acceptance rule**, used for the later development stages:
 - a mean gain of at least +0.00105, which is twice the measured standard error of a 15-fold mean;
 - at least 11 of 15 folds positive and all three repeats positive;
 - the same sign with a second seed;
@@ -86,8 +86,7 @@ bundle that passed on its own. The public leaderboard was never used to choose a
 From v2 on, our validation predicted the leaderboard within 0.0011 on four consecutive submissions, our best
 evidence that the model holds on unseen data (`results/cv_vs_leaderboard.csv`, `results/early_phase_baselines.csv`).
 
-**What we tried and rejected.** Every track was judged under the same acceptance rule, so neither of us could put
-work into the model on enthusiasm. The second team member developed and tested three:
+**What we tried and rejected.** Candidate approaches were screened against the acceptance criteria. Some were stopped early after weak preliminary results. The experiment records cover three alternative tracks:
 - **Sequence models.** A temporal convolutional network on the raw series scored 0.744 alone and 0.834 with our
   tabular features added. It ranked series almost as the tree model did (rank correlation 0.92), so the best blend added only +0.00047.
 - **Training on simulated series.** This scored 0.780 on real data, and pre-training on them lost 0.0072 on every
@@ -95,7 +94,7 @@ work into the model on enthusiasm. The second team member developed and tested t
 - **Alternative learners and stacking.** XGBoost, extra-trees, other LightGBM variants and a seven-model stack all
   had rank correlations of 0.94–0.99 with the main model; the best blend gained +0.0002.
 
-The first author developed the track that worked:
+The final model combined three improvements developed during the AI-assisted experiment sessions:
 - exploiting the time-reversal symmetry (+0.0082);
 - building evidence against a reference model chosen for each series (+0.0083 on all 15 folds, together with the
   likelihood-ratio features);
@@ -181,9 +180,9 @@ Training on it was tested and rejected.
 within limits we set. A Gemini CLI was used the same way in the earliest phase. Every ship decision followed an
 acceptance rule we fixed in advance; details are in `AI_DISCLOSURE.md`.
 
-**Verification.** The shared acceptance rule is how we checked each other's work. The mechanical checks all passed:
+**Verification.** The recorded checks include:
 - confirmation splits: 10 of 10 folds positive;
-- the sealed holdout;
+- holdout evaluations during earlier development; this holdout was opened four times and was not used for v6;
 - a 32-case battery of degenerate inputs: all finite in [0, 1], and flat series exactly 0.5;
 - invariance: rescaling, reversal, row order and batch composition change nothing;
 - byte-identical reproduction from a clean shell (`results/final_verification.txt`).
