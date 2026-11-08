@@ -1,0 +1,101 @@
+model,model_seed,split_seed,split_role,fold,auc
+v5,0,1729,dev (decisions),0,0.858648
+v5,0,1729,dev (decisions),1,0.865607
+v5,0,1729,dev (decisions),2,0.855465
+v5,0,1729,dev (decisions),3,0.85141
+v5,0,1729,dev (decisions),4,0.850343
+v5,0,2026,dev (decisions),0,0.853267
+v5,0,2026,dev (decisions),1,0.852391
+v5,0,2026,dev (decisions),2,0.861307
+v5,0,2026,dev (decisions),3,0.852099
+v5,0,2026,dev (decisions),4,0.864382
+v5,0,31415,dev (decisions),0,0.851249
+v5,0,31415,dev (decisions),1,0.856203
+v5,0,31415,dev (decisions),2,0.858146
+v5,0,31415,dev (decisions),3,0.862792
+v5,0,31415,dev (decisions),4,0.852353
+v5,0,5150,fresh (confirmation only),0,0.861682
+v5,0,5150,fresh (confirmation only),1,0.864143
+v5,0,5150,fresh (confirmation only),2,0.856068
+v5,0,5150,fresh (confirmation only),3,0.847751
+v5,0,5150,fresh (confirmation only),4,0.839618
+v5,0,6260,fresh (confirmation only),0,0.863146
+v5,0,6260,fresh (confirmation only),1,0.85486
+v5,0,6260,fresh (confirmation only),2,0.861784
+v5,0,6260,fresh (confirmation only),3,0.852059
+v5,0,6260,fresh (confirmation only),4,0.84656
+v5,1,1729,dev (decisions),0,0.857164
+v5,1,1729,dev (decisions),1,0.864695
+v5,1,1729,dev (decisions),2,0.855978
+v5,1,1729,dev (decisions),3,0.853122
+v5,1,1729,dev (decisions),4,0.849389
+v5,1,2026,dev (decisions),0,0.853521
+v5,1,2026,dev (decisions),1,0.853094
+v5,1,2026,dev (decisions),2,0.860328
+v5,1,2026,dev (decisions),3,0.852002
+v5,1,2026,dev (decisions),4,0.865879
+v5,1,31415,dev (decisions),0,0.851695
+v5,1,31415,dev (decisions),1,0.855729
+v5,1,31415,dev (decisions),2,0.858975
+v5,1,31415,dev (decisions),3,0.860313
+v5,1,31415,dev (decisions),4,0.850933
+v5,1,5150,fresh (confirmation only),0,0.861659
+v5,1,5150,fresh (confirmation only),1,0.866072
+v5,1,5150,fresh (confirmation only),2,0.857908
+v5,1,5150,fresh (confirmation only),3,0.848824
+v5,1,5150,fresh (confirmation only),4,0.839683
+v5,1,6260,fresh (confirmation only),0,0.861862
+v5,1,6260,fresh (confirmation only),1,0.856039
+v5,1,6260,fresh (confirmation only),2,0.861985
+v5,1,6260,fresh (confirmation only),3,0.853058
+v5,1,6260,fresh (confirmation only),4,0.846895
+v6,0,1729,dev (decisions),0,0.861902
+v6,0,1729,dev (decisions),1,0.870764
+v6,0,1729,dev (decisions),2,0.863657
+v6,0,1729,dev (decisions),3,0.859307
+v6,0,1729,dev (decisions),4,0.853741
+v6,0,2026,dev (decisions),0,0.856009
+v6,0,2026,dev (decisions),1,0.8585
+v6,0,2026,dev (decisions),2,0.865972
+v6,0,2026,dev (decisions),3,0.857496
+v6,0,2026,dev (decisions),4,0.871997
+v6,0,31415,dev (decisions),0,0.859638
+v6,0,31415,dev (decisions),1,0.862787
+v6,0,31415,dev (decisions),2,0.863244
+v6,0,31415,dev (decisions),3,0.867067
+v6,0,31415,dev (decisions),4,0.857434
+v6,0,5150,fresh (confirmation only),0,0.868996
+v6,0,5150,fresh (confirmation only),1,0.870452
+v6,0,5150,fresh (confirmation only),2,0.86047
+v6,0,5150,fresh (confirmation only),3,0.854795
+v6,0,5150,fresh (confirmation only),4,0.846255
+v6,0,6260,fresh (confirmation only),0,0.871073
+v6,0,6260,fresh (confirmation only),1,0.860543
+v6,0,6260,fresh (confirmation only),2,0.868589
+v6,0,6260,fresh (confirmation only),3,0.855818
+v6,0,6260,fresh (confirmation only),4,0.855487
+v6,1,1729,dev (decisions),0,0.862958
+v6,1,1729,dev (decisions),1,0.870213
+v6,1,1729,dev (decisions),2,0.86397
+v6,1,1729,dev (decisions),3,0.857603
+v6,1,1729,dev (decisions),4,0.854512
+v6,1,2026,dev (decisions),0,0.857943
+v6,1,2026,dev (decisions),1,0.858273
+v6,1,2026,dev (decisions),2,0.865341
+v6,1,2026,dev (decisions),3,0.856419
+v6,1,2026,dev (decisions),4,0.871705
+v6,1,31415,dev (decisions),0,0.859131
+v6,1,31415,dev (decisions),1,0.864254
+v6,1,31415,dev (decisions),2,0.862807
+v6,1,31415,dev (decisions),3,0.868122
+v6,1,31415,dev (decisions),4,0.857144
+v6,1,5150,fresh (confirmation only),0,0.868313
+v6,1,5150,fresh (confirmation only),1,0.871029
+v6,1,5150,fresh (confirmation only),2,0.861029
+v6,1,5150,fresh (confirmation only),3,0.853734
+v6,1,5150,fresh (confirmation only),4,0.84753
+v6,1,6260,fresh (confirmation only),0,0.869523
+v6,1,6260,fresh (confirmation only),1,0.861193
+v6,1,6260,fresh (confirmation only),2,0.86854
+v6,1,6260,fresh (confirmation only),3,0.857017
+v6,1,6260,fresh (confirmation only),4,0.854973

@@ -1,0 +1,19 @@
+{
+ "rows": 4000,
+ "distinct_values_in_file": 4000,
+ "distinct_in_memory": 4000,
+ "largest_tie_block": 1,
+ "significant_digits_written": {
+  "13": 6,
+  "14": 23,
+  "15": 281,
+  "16": 2431,
+  "17": 1259
+ },
+ "written_text_is_shortest_exact_repr_of_in_memory_double": "4000 of 4000",
+ "exact_decimal_order_of_file_equals_in_memory_order": true,
+ "rank_vectors_identical": true,
+ "decision": "no change: 4,000 distinct values, no ties, and every value is written in Python's shortest exact round-trip form, so the file encodes the in-memory doubles bit for bit and the ranking exactly; submission.csv left unchanged (md5 dc335464fec173ae2cf42996dfdfb67b)",
+ "file_value_parsed_exactly_equals_in_memory_double": "4000 of 4000",
+ "note": "The written decimal is the shortest string that converts back to the same double; it differs from the double's full binary expansion by < 1e-16, which is a property of decimal notation, not a change of value."
+}

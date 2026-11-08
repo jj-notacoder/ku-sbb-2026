@@ -1,0 +1,29 @@
+{
+ "md5": "dc335464fec173ae2cf42996dfdfb67b",
+ "rows": 4000,
+ "columns": [
+  "id",
+  "break_probability"
+ ],
+ "ids_unique": true,
+ "ids_equal_sample_submission_in_order": true,
+ "id_set_equals_test_series_ids": true,
+ "n_test_series": 4000,
+ "all_finite": true,
+ "within_0_1": true,
+ "header_line": "id,break_probability",
+ "line_endings": "LF only",
+ "ends_with_single_newline": true,
+ "n_newlines": 4001,
+ "no_index_column": true,
+ "n_exactly_0.5": 0,
+ "distribution": {
+  "min": 0.0047,
+  "q25": 0.161,
+  "median": 0.3661,
+  "mean": 0.4699,
+  "q75": 0.8372,
+  "max": 1.0
+ },
+ "share_above_0.5": 0.3915
+}

@@ -1,0 +1,32 @@
+# console output of `python run_all.py --verify-only`, run inside SUBMISSION/ with cache/ deleted and the old project trees already removed (final session, 2026-11-07)
+>> src/extract.py --fams wide,shape,pit,vol,battery,distfam,dgplr,null3,glr,dgplr2 --files test_series.parquet
+[extract] test_series wide: (4000, 181) in 7.9s
+[extract] test_series shape: (4000, 77) in 2.4s
+[extract] test_series pit: (4000, 83) in 1.5s
+[extract] test_series vol: (4000, 46) in 1.6s
+[extract] test_series battery: (4000, 168) in 10.1s
+[extract] test_series distfam: (4000, 37) in 3.2s
+[extract] test_series dgplr: (4000, 26) in 121.3s
+[extract] test_series null3: (4000, 123) in 149.7s
+[extract] test_series glr: (4000, 122) in 159.9s
+[extract] test_series dgplr2: (4000, 10) in 156.1s
+>> src/views.py --views rev --fams wide,shape,pit,vol,battery,distfam,dgplr,null3,glr,dgplr2 --stems test_series
+[view] test_series wide rev: (4000, 181) nan->0: 0 12s
+[view] test_series shape rev: (4000, 77) nan->0: 0 4s
+[view] test_series pit rev: (4000, 83) nan->0: 0 3s
+[view] test_series vol rev: (4000, 46) nan->0: 0 3s
+[view] test_series battery rev: (4000, 168) nan->0: 0 13s
+[view] test_series distfam rev: (4000, 37) nan->0: 0 4s
+[view] test_series dgplr rev: (4000, 26) nan->0: 0 132s
+[view] test_series null3 rev: (4000, 123) nan->0: 0 144s
+[view] test_series glr rev: (4000, 122) nan->0: 0 149s
+[view] test_series dgplr2 rev: (4000, 10) nan->0: 0 147s
+>> src/final6.py verify
+[submission] verify.csv: 4000 rows OK, mean=0.4699
+[verify] recomputed dc335464fec173ae2cf42996dfdfb67b vs submission.csv dc335464fec173ae2cf42996dfdfb67b -> BYTE-IDENTICAL
+>> -c import sys;sys.path.insert(0,'src');import pandas as pd, paths;from infer import predict_frame;te=pd.read_parquet(paths.DATA/'test_series.parquet');ids=te.id.drop_duplicates().iloc[:50];p=predict_frame(te[te.id.isin(ids)]);s=pd.read_csv('submission.csv',dtype={'id':str}).set_index('id').break_probability;d=float((p-s.loc[p.index]).abs().max());print('[verify] infer.py on 50 raw test series: max |diff| vs submission',d);assert d<1e-12
+[verify] infer.py on 50 raw test series: max |diff| vs submission 1.1102230246251565e-16
+
+real	21m13.461s
+user	0m0.030s
+sys	0m0.000s

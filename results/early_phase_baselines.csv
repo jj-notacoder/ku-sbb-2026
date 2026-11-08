@@ -1,0 +1,7 @@
+stage,model,features,cv_auc,cv_protocol,source
+early exploratory phase (2026-10-31),starter logistic regression supplied with the competition,6,0.69415,"repeated stratified group 5-fold, split seeds 42/123/999 (15 folds)",our early-phase experiment report (not shipped: it contains machine-specific paths)
+early exploratory phase (2026-10-31),logistic regression on our first 75 features,75,0.75933,same,same
+early exploratory phase (2026-10-31),LightGBM on the same 75 features,75,0.81266,same,same
+early exploratory phase (2026-10-31),raw-sequence dilated CNN pilot,raw series,0.63210,"one split only (pilot, killed)",same
+early exploratory phase (2026-10-31),LightGBM on 101 features,101,0.81907,same as row 1,same
+early exploratory phase (2026-10-31),LightGBM + CatBoost rank blend (best of that phase),101,0.81926,same as row 1,same

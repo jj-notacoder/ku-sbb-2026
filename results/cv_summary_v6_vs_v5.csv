@@ -1,0 +1,5 @@
+split_role,model_seed,n_folds,v5_mean,v6_mean,mean_delta,folds_positive,min_fold_delta,max_fold_delta
+dev (decisions),0,15,0.85638,0.86197,0.00559,15,0.00274,0.00839
+dev (decisions),1,15,0.85619,0.86203,0.00584,15,0.00383,0.00852
+fresh (confirmation only),0,10,0.85477,0.86125,0.00648,10,0.00376,0.00893
+fresh (confirmation only),1,10,0.8554,0.86129,0.00589,10,0.00312,0.00808

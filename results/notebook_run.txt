@@ -1,0 +1,8 @@
+# run_solution.ipynb executed top to bottom in a fresh Jupyter kernel (nbclient), final restructure session, 2026-11-08
+# cache/ deleted first (cold start); 12 cores shared with a concurrent full rebuild, so times are slower than on an idle machine
+total runtime: 2226 s (37 min); feature extraction 2144 s of it
+result: submission.csv written by step 7; md5 dc335464fec173ae2cf42996dfdfb67b (identical to the shipped file)
+step 8 checks: PASS rows == 4000 | PASS columns | PASS ids once each, official order | PASS finite and within [0,1] | PASS md5
+note: a first run the same night stopped at step 8 because of a typo in that cell (an unterminated string); steps 1-7 had
+already produced the identical file. The cell was fixed and the whole notebook re-run from a cold cache; the outputs
+shipped in run_solution.ipynb are from that second, complete run.

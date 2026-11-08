@@ -1,0 +1,6 @@
+ship,date,what_changed,cv_protocol,dev_cv_auc,public_lb_auc,lb_minus_cv
+v1,2026-11-03,386 features + LightGBM x5 seeds,"5-fold, split seed 1729 only (before repeated CV existed)",0.8406,0.84372,0.00312
+v2,2026-11-04,"+battery/distfam (548 cols), time-reversal augmentation + reversal TTA",3x5 repeated CV (15 folds),0.8465,0.84544,-0.00106
+v3,2026-11-06,LightGBM re-tuned on the real setup (Optuna #56),3x5 repeated CV (15 folds),0.84803,0.84743,-0.0006
+v5,2026-11-06,+dgplr (25) +null3 (117) = 690 cols,3x5 repeated CV (15 folds),0.85638,0.85642,4e-05
+v6,2026-11-07,+glr (81) +dgplr2 (10) = 781 cols  [FINAL],3x5 repeated CV (15 folds),0.86197,0.86276,0.00079

@@ -1,0 +1,8 @@
+model,source,group,n_positives_in_group,share_of_positives,auc_vs_all_dev_negatives,note
+v3,ceiling.md section 2 (4000-series stratified dev subsample),identified (a mechanism coordinate outside the label-0 99% range),644,0.322,0.984,v3 dev OOF seed 0
+v3,ceiling.md section 2 (4000-series stratified dev subsample),unexplained (no single detectable change),1356,0.678,0.776,v3 dev OOF seed 0
+v5,S4 ship gate (dev 3x5 OOF seed 0),identified,644,0.322,0.9857,same identification table
+v5,S4 ship gate (dev 3x5 OOF seed 0),unexplained,1356,0.678,0.7901,same identification table (proxy)
+v6,S4 ship gate (dev 3x5 OOF seed 0),identified,644,0.322,0.9856,same identification table
+v6,S4 ship gate (dev 3x5 OOF seed 0),unexplained,1356,0.678,0.7973,same identification table (proxy); implied value from overall AUC 0.8032
+v6,S4 ship gate (fresh 2x5 OOF seed 0),unexplained,1356,0.678,0.7966,implied 0.8024

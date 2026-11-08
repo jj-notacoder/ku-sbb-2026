@@ -1,0 +1,45 @@
+{
+ "models": "models",
+ "n_boosters": 10,
+ "affine_max_abs_diff": [
+  0.0,
+  0.0,
+  0.0
+ ],
+ "tta_reversal_max_abs_diff": 0.0,
+ "sign_flip_max_abs_diff(info: sign is not a TTA view)": 0.11973560523872434,
+ "reorder_max_abs_diff": 0.0,
+ "single_vs_batch_max_abs_diff": 2.220446049250313e-16,
+ "independence_max_abs_diff": 0.0,
+ "submission_vs_predict_series_max_abs_diff": 1.1102230246251565e-16,
+ "degenerate": {
+  "constant": 0.5,
+  "constant_neg_large": 0.5,
+  "near_constant": 0.5,
+  "constant_jump": 0.7998743600410123,
+  "spike_only": 0.362137147312857,
+  "short40": 0.3498438510794915,
+  "very_short3": 0.3288249935908088,
+  "min1": 0.1624470126022669,
+  "short_post5": 0.4963371719151519
+ },
+ "degenerate_all_finite_in_01": true,
+ "constant_and_near_constant_are_0.5": true,
+ "refit_threads_6_vs_12_max_abs_diff": 0.0,
+ "cli_vs_submission_max_abs_diff": 0.0,
+ "cli_n": 4000,
+ "adversarial_auc_by_family": {
+  "wide": 0.5656,
+  "shape": 0.5633,
+  "pit": 0.5549,
+  "vol": 0.5454,
+  "battery": 0.5552,
+  "distfam": 0.539,
+  "dgplr": 0.5499,
+  "null3": 0.5619,
+  "glr": 0.5672,
+  "dgplr2": 0.535
+ },
+ "sim_feature_determinism": "glr / dgplr2 and the glr calibration table: determinism checked by two independent full-test extractions + 8 rebuilt table cells, all max diff 0.0 (results/determinism_v6_shiptime.json)",
+ "compared_csv": "submission.csv"
+}

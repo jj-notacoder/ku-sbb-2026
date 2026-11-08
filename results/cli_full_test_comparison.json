@@ -1,0 +1,10 @@
+{
+ "command": "python src/infer.py --input <data_dir>/test_series.parquet --output cache/cli.csv",
+ "run": "final packaging session, 2026-11-07, inside SUBMISSION/, 12 cores, sequentially after quick_checks and edge_cases",
+ "wall_clock_seconds": 1318,
+ "n_series": 4000,
+ "comparison": "every value parsed with Python float() (exact round-trip) from cli.csv and from submission.csv",
+ "max_abs_diff": 0.0,
+ "n_values_differing": 0,
+ "note": "Bitwise-equal predictions. Re-writing the CLI output through pandas.read_csv (whose default float parser is not round-trip exact) changes the last printed digit of some values, so md5 comparisons must be made on files written directly by the pipeline, as run_all.py --verify-only does."
+}

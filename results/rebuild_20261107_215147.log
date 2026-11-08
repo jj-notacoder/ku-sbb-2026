@@ -1,0 +1,108 @@
+# python run_all.py --out <scratch work folder>  (full from-scratch rebuild; shipped models/ and submission.csv are not written). Started 2026-11-07 21:51:48
+>> -c import sys;sys.path.insert(0,'src');import paths, pandas as pd;from sklearn.model_selection import StratifiedShuffleSplit as S;l=pd.read_csv(paths.DATA/'train_labels.csv',dtype={'id':str});d,h=next(S(1,test_size=0.2,random_state=20261103).split(l.id,l.label));l.iloc[h][['id']].to_csv(paths.CACHE/'holdout_ids.csv',index=False);l.iloc[d][['id']].to_csv(paths.CACHE/'dev_ids.csv',index=False)
+>> src/extract.py --fams wide,shape,pit,vol,battery,distfam,dgplr,null3,glr
+[extract] train_series wide: (24000, 181) in 85.7s
+[extract] train_series shape: (24000, 77) in 80.9s
+[extract] train_series pit: (24000, 83) in 59.8s
+[extract] train_series vol: (24000, 46) in 57.5s
+[extract] train_series battery: (24000, 168) in 252.0s
+[extract] train_series distfam: (24000, 37) in 71.6s
+[extract] train_series dgplr: (24000, 26) in 1973.0s
+[extract] train_series null3: (24000, 123) in 1410.1s
+[extract] train_series glr: (24000, 122) in 1532.3s
+[extract] test_series wide: (4000, 181) in 15.2s
+[extract] test_series shape: (4000, 77) in 6.0s
+[extract] test_series pit: (4000, 83) in 4.5s
+[extract] test_series vol: (4000, 46) in 5.6s
+[extract] test_series battery: (4000, 168) in 26.8s
+[extract] test_series distfam: (4000, 37) in 6.2s
+[extract] test_series dgplr: (4000, 26) in 248.9s
+[extract] test_series null3: (4000, 123) in 260.0s
+[extract] test_series glr: (4000, 122) in 286.7s
+>> src/extract.py --fams dgplr2
+[extract] train_series dgplr2: (24000, 10) in 1664.3s
+[extract] test_series dgplr2: (4000, 10) in 493.8s
+>> src/views.py --views rev --fams wide,shape,pit,vol,battery,distfam,dgplr,null3,glr,dgplr2
+[view] train_series wide rev: (24000, 181) nan->0: 0 133s
+[view] train_series shape rev: (24000, 77) nan->0: 0 47s
+[view] train_series pit rev: (24000, 83) nan->0: 0 30s
+[view] train_series vol rev: (24000, 46) nan->0: 0 34s
+[view] train_series battery rev: (24000, 168) nan->0: 0 161s
+[view] train_series distfam rev: (24000, 37) nan->0: 0 36s
+[view] train_series dgplr rev: (24000, 26) nan->0: 0 1789s
+[view] train_series null3 rev: (24000, 123) nan->0: 0 1752s
+[view] train_series glr rev: (24000, 122) nan->0: 0 1954s
+[view] train_series dgplr2 rev: (24000, 10) nan->0: 0 1097s
+[view] test_series wide rev: (4000, 181) nan->0: 0 10s
+[view] test_series shape rev: (4000, 77) nan->0: 0 5s
+[view] test_series pit rev: (4000, 83) nan->0: 0 3s
+[view] test_series vol rev: (4000, 46) nan->0: 0 3s
+[view] test_series battery rev: (4000, 168) nan->0: 0 17s
+[view] test_series distfam rev: (4000, 37) nan->0: 0 4s
+[view] test_series dgplr rev: (4000, 26) nan->0: 0 161s
+[view] test_series null3 rev: (4000, 123) nan->0: 0 171s
+[view] test_series glr rev: (4000, 122) nan->0: 0 183s
+[view] test_series dgplr2 rev: (4000, 10) nan->0: 0 186s
+>> src/final6.py refit v6 10
+  fitted lgb_t56 seed 0
+  fitted lgb_t56 seed 1
+  fitted lgb_t56 seed 2
+  fitted lgb_t56 seed 3
+  fitted lgb_t56 seed 4
+  fitted lgb_t56 seed 5
+  fitted lgb_t56 seed 6
+  fitted lgb_t56 seed 7
+  fitted lgb_t56 seed 8
+  fitted lgb_t56 seed 9
+[submission] candidate_v6.csv: 4000 rows OK, mean=0.4699
+refit 3668s
+>> src/robust3.py <scratch>\models_v6
+wrote 4000 predictions to <temp>\cli.csv
+{
+ "models": "models_v6",
+ "n_boosters": 10,
+ "affine_max_abs_diff": [
+  0.0,
+  0.0,
+  0.0
+ ],
+ "tta_reversal_max_abs_diff": 0.0,
+ "sign_flip_max_abs_diff(info: sign is not a TTA view)": 0.11973560523872434,
+ "reorder_max_abs_diff": 0.0,
+ "single_vs_batch_max_abs_diff": 2.220446049250313e-16,
+ "independence_max_abs_diff": 0.0,
+ "submission_vs_predict_series_max_abs_diff": 1.1102230246251565e-16,
+ "degenerate": {
+  "constant": 0.5,
+  "constant_neg_large": 0.5,
+  "near_constant": 0.5,
+  "constant_jump": 0.7998743600410123,
+  "spike_only": 0.362137147312857,
+  "short40": 0.3498438510794915,
+  "very_short3": 0.3288249935908088,
+  "min1": 0.1624470126022669,
+  "short_post5": 0.4963371719151519
+ },
+ "degenerate_all_finite_in_01": true,
+ "constant_and_near_constant_are_0.5": true,
+ "refit_threads_6_vs_12_max_abs_diff": 0.0,
+ "cli_vs_submission_max_abs_diff": 0.0,
+ "cli_n": 4000,
+ "adversarial_auc_by_family": {
+  "wide": 0.5656,
+  "shape": 0.5633,
+  "pit": 0.5549,
+  "vol": 0.5454,
+  "battery": 0.5552,
+  "distfam": 0.539,
+  "dgplr": 0.5499,
+  "null3": 0.5619,
+  "glr": 0.5672,
+  "dgplr2": 0.535
+ },
+ "sim_feature_determinism": "see results/robustness_v6.json (two independent full-test extractions)"
+}
+>> -c import hashlib;from decimal import Decimal as D;a=open(r'<scratch>\candidate_v6.csv').read().splitlines()[1:];b=open('submission.csv').read().splitlines()[1:];A={l.split(',')[0]:D(l.split(',')[1]) for l in a};B={l.split(',')[0]:D(l.split(',')[1]) for l in b};d=max(abs(A[k]-B[k]) for k in B);n=sum(A[k]!=B[k] for k in B);print('[rebuild] candidate md5',hashlib.md5(open(r'<scratch>\candidate_v6.csv','rb').read()).hexdigest(),'| shipped md5',hashlib.md5(open('submission.csv','rb').read()).hexdigest());print('[rebuild] values differing:',n,'of',len(B),'| max |diff|:',d)
+[rebuild] candidate md5 dc335464fec173ae2cf42996dfdfb67b | shipped md5 dc335464fec173ae2cf42996dfdfb67b
+[rebuild] values differing: 0 of 4000 | max |diff|: 0E-16
+# finished 2026-11-08 03:57:11 exit 0

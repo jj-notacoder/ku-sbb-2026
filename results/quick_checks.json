@@ -1,0 +1,15 @@
+{
+ "affine": [
+  0.0,
+  0.0,
+  0.0
+ ],
+ "reversal_tta": 0.0,
+ "reorder": 0.0,
+ "single_vs_batch": 2.220446049250313e-16,
+ "independence": 0.0,
+ "submission_vs_predict_series": 1.1102230246251565e-16,
+ "constants_exactly_0.5": true,
+ "raw_features_vs_cache_max_abs_diff": 0.0,
+ "PASS": true
+}

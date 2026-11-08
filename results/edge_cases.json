@@ -1,0 +1,215 @@
+{
+ "shuffled_order_max_abs_diff": 0.0,
+ "subset_presence_max_abs_diff": 0.0,
+ "single_series_vs_batch_max_abs_diff": 2.220446049250313e-16,
+ "different_neighbours_max_abs_diff": 0.0,
+ "random_120_vs_submission_max_abs_diff": 1.1102230246251565e-16,
+ "affine_max_abs_diff": {
+  "x*3.7+-120.0": 0.0,
+  "x*1e-06+0.0": 0.0,
+  "x*1000000.0+0.0": 0.0,
+  "x*1.0+1000000000.0": 0.0,
+  "x*-1.0+0.0": 0.12629413172521264
+ },
+ "time_reversal_max_abs_diff": 0.0,
+ "edge_cases": {
+  "constant_400": {
+   "n_total": 400,
+   "n_pre": 200,
+   "prediction": 0.5,
+   "n_missing_features_orig_view": 233
+  },
+  "constant_zero_400": {
+   "n_total": 400,
+   "n_pre": 200,
+   "prediction": 0.5,
+   "n_missing_features_orig_view": 233
+  },
+  "constant_huge_negative": {
+   "n_total": 400,
+   "n_pre": 200,
+   "prediction": 0.5,
+   "n_missing_features_orig_view": 233
+  },
+  "near_constant_1e-13_noise": {
+   "n_total": 400,
+   "n_pre": 200,
+   "prediction": 0.5,
+   "n_missing_features_orig_view": 233
+  },
+  "all_identical_except_one_point_post": {
+   "n_total": 400,
+   "n_pre": 200,
+   "prediction": 0.3527186447698582,
+   "n_missing_features_orig_view": 142
+  },
+  "constant_pre_noisy_post": {
+   "n_total": 400,
+   "n_pre": 200,
+   "prediction": 0.9991816847424797,
+   "n_missing_features_orig_view": 142
+  },
+  "noisy_pre_constant_post": {
+   "n_total": 400,
+   "n_pre": 200,
+   "prediction": 0.9993959297961293,
+   "n_missing_features_orig_view": 0
+  },
+  "constant_pre_level_jump": {
+   "n_total": 400,
+   "n_pre": 200,
+   "prediction": 0.784751020378468,
+   "n_missing_features_orig_view": 142
+  },
+  "spike_only_pre": {
+   "n_total": 400,
+   "n_pre": 200,
+   "prediction": 0.33772841759403754,
+   "n_missing_features_orig_view": 0
+  },
+  "spike_only_post": {
+   "n_total": 400,
+   "n_pre": 200,
+   "prediction": 0.33183202594412464,
+   "n_missing_features_orig_view": 142
+  },
+  "noise_with_one_huge_spike": {
+   "n_total": 400,
+   "n_pre": 200,
+   "prediction": 0.6887112145645357,
+   "n_missing_features_orig_view": 0
+  },
+  "total_length_2_(1+1)": {
+   "n_total": 2,
+   "n_pre": 1,
+   "prediction": 0.1624470126022669,
+   "n_missing_features_orig_view": 781
+  },
+  "total_length_6_(3+3)": {
+   "n_total": 6,
+   "n_pre": 3,
+   "prediction": 0.4620340313841235,
+   "n_missing_features_orig_view": 485
+  },
+  "total_length_20": {
+   "n_total": 20,
+   "n_pre": 10,
+   "prediction": 0.5540563702947658,
+   "n_missing_features_orig_view": 233
+  },
+  "total_length_100": {
+   "n_total": 100,
+   "n_pre": 50,
+   "prediction": 0.6428472246669217,
+   "n_missing_features_orig_view": 0
+  },
+  "total_length_200_(below_train_min_256)": {
+   "n_total": 200,
+   "n_pre": 100,
+   "prediction": 0.17495049838672602,
+   "n_missing_features_orig_view": 0
+  },
+  "total_length_2048_(above_train_max_1024)": {
+   "n_total": 2048,
+   "n_pre": 1024,
+   "prediction": 0.041411847582871385,
+   "n_missing_features_orig_view": 0
+  },
+  "total_length_8192": {
+   "n_total": 8192,
+   "n_pre": 4096,
+   "prediction": 0.04704971389957951,
+   "n_missing_features_orig_view": 0
+  },
+  "n_pre_1": {
+   "n_total": 500,
+   "n_pre": 1,
+   "prediction": 0.23154006585340497,
+   "n_missing_features_orig_view": 781
+  },
+  "n_pre_2": {
+   "n_total": 500,
+   "n_pre": 2,
+   "prediction": 0.24795027775728232,
+   "n_missing_features_orig_view": 609
+  },
+  "n_post_1": {
+   "n_total": 500,
+   "n_pre": 499,
+   "prediction": 0.2337061737853104,
+   "n_missing_features_orig_view": 628
+  },
+  "n_post_2": {
+   "n_total": 500,
+   "n_pre": 498,
+   "prediction": 0.2513500266225509,
+   "n_missing_features_orig_view": 447
+  },
+  "n_pre_5_of_1000": {
+   "n_total": 1000,
+   "n_pre": 5,
+   "prediction": 0.4427872311002411,
+   "n_missing_features_orig_view": 331
+  },
+  "n_post_5_of_1000": {
+   "n_total": 1000,
+   "n_pre": 995,
+   "prediction": 0.5130702330411131,
+   "n_missing_features_orig_view": 309
+  },
+  "tiny_scale_1e-12": {
+   "n_total": 400,
+   "n_pre": 200,
+   "prediction": 0.5,
+   "n_missing_features_orig_view": 233
+  },
+  "huge_scale_1e12": {
+   "n_total": 400,
+   "n_pre": 200,
+   "prediction": 0.07313409563807671,
+   "n_missing_features_orig_view": 0
+  },
+  "huge_offset_1e15": {
+   "n_total": 400,
+   "n_pre": 200,
+   "prediction": 0.5,
+   "n_missing_features_orig_view": 0
+  },
+  "obvious_level_break": {
+   "n_total": 400,
+   "n_pre": 200,
+   "prediction": 0.9998661880436573,
+   "n_missing_features_orig_view": 0
+  },
+  "obvious_variance_break": {
+   "n_total": 400,
+   "n_pre": 200,
+   "prediction": 0.9998821161961935,
+   "n_missing_features_orig_view": 0
+  },
+  "random_walk_no_break": {
+   "n_total": 400,
+   "n_pre": 200,
+   "prediction": 0.26904089762223393,
+   "n_missing_features_orig_view": 0
+  },
+  "integer_valued_series": {
+   "n_total": 400,
+   "n_pre": 200,
+   "prediction": 0.5174461663578451,
+   "n_missing_features_orig_view": 0
+  },
+  "binary_valued_series": {
+   "n_total": 400,
+   "n_pre": 200,
+   "prediction": 0.30569490163243784,
+   "n_missing_features_orig_view": 0
+  }
+ },
+ "edge_all_finite_in_0_1": true,
+ "constant_and_near_constant_exactly_0.5": true,
+ "nan_input": "rejected with ValueError: non-finite value in series a",
+ "no_post_segment": "rejected with ValueError: series a needs at least one pre and one post observation",
+ "PASS": true,
+ "runtime_s": 1440.6
+}

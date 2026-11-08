@@ -1,0 +1,9 @@
+{
+ "run": "final hardening session, 2026-11-07, over every text file in SUBMISSION/ (models scanned as text too; caches excluded because they are deleted before handover)",
+ "organiser_text": "every 8-word sequence of the organisers' README, START_HERE, starter script, manifest and notebook (source and outputs) searched for in every file",
+ "organiser_text_result": "no prose overlap. The only 8-word matches are the list of competition file names (README.md, REPRODUCE.md: where to put the data) and generic Python import lines (from pathlib import Path / import numpy as np); results/analysis/dgp.md now paraphrases the organisers' description instead of quoting it",
+ "test_series_ids": "found only in submission.csv (4,000 ids, required by the competition format)",
+ "training_series_ids": "found in no file",
+ "test_labels": "none exist in the project; none in any file",
+ "per_series_test_values_or_features": "none (feature caches are deleted before handover; results/ hold aggregates only)"
+}

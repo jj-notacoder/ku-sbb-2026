@@ -1,0 +1,38 @@
+# Final clean-shell verification after the restructure (2026-11-08), run inside SUBMISSION/ with the test-feature cache left by the
+# cold notebook run (deleted afterwards). Steps: pins parity, compile/import, --verify-only, quick_checks, 32-case edge battery,
+# format check, path and name scans, md5. Cores were shared with a concurrent full rebuild, so step times are inflated.
+# Note on step 6: the broad pattern flagged only JSON-escaped newlines after a colon in run_solution.ipynb (e.g. 'if missing:\n');
+# a precise re-scan for drive-letter paths, user folders and home directories found none.
+== start 01:57:47
+== top level:
+AI_DISCLOSURE.md cache config environment.yml models README.md REPORT.md requirements.txt results run_all.py run_solution.ipynb SOURCES.md src submission.csv 
+== 0. requirements.txt vs environment.yml
+parsed: requirements 20 pins; environment.yml 20 pins; identical: True | python ['python=3.13']
+== 1. byte-compile + import every module
+compiled 28 files; import failures: []
+notebook parses: 19 cells
+== 2. run_all.py --verify-only
+[verify] recomputed dc335464fec173ae2cf42996dfdfb67b vs submission.csv dc335464fec173ae2cf42996dfdfb67b -> BYTE-IDENTICAL
+[verify] infer.py on 50 raw test series: max |diff| vs submission 0.0
+verify seconds 176
+== 3. quick_checks
+ "PASS": true
+qc seconds 1312
+== 4. edge battery
+PASS True cases 32 finite True const0.5 True shuffle 0.0 subset 0.0 neighbours 0.0
+edge seconds 1446
+== 5. format check
+{"rows": 4000, "columns": ["id", "break_probability"], "ids_once_in_official_order": true, "finite_in_0_1": true, "no_index_column": true, "LF_only": true}
+== 6. scans
+./run_solution.ipynb:117:    "if missing:\n",
+./run_solution.ipynb:119:    "print(\"data folder found; files present:\", need)"
+./run_solution.ipynb:398:    "print(\"feature tables:\", Xo.shape, Xr.shape)"
+./run_solution.ipynb:438:    "print(\"boosters loaded:\", sum(len(b) for b in R.boosters.values()), \"| columns expected:\", len(R.cols))"
+./run_solution.ipynb:519:    "print(\"flat series in the test set:\", int(flat.sum()))"
+./run_solution.ipynb:648:    "if RETRAIN:\n",
+./run_solution.ipynb:651:    "else:\n",
+PATHS FOUND
+no names / e-mail addresses
+== 7. md5
+dc335464fec173ae2cf42996dfdfb67b *submission.csv
+== end 02:47:59

@@ -1,0 +1,14 @@
+# The three failure modes a grader is most likely to hit, each triggered deliberately in a scratch copy of this folder
+# (final hardening session, 2026-11-07). The shipped files were not modified. Absolute paths in the messages are
+# replaced by <...>. Since the final restructure the messages point to REPORT.md, section 4 ('Version lock') instead of
+# REPRODUCE.md, whose content was folded into REPORT.md and README.md.
+
+## 1. Package version differs from the pinned set  (trigger: pinned lightgbm changed to 9.9.9 in the copy) -> warns, continues
+[run_all] WARNING: lightgbm 4.7.0 installed, 9.9.9 pinned - results should rank identically, but the last digits of predictions may differ, so byte-identity is not guaranteed (see REPRODUCE.md, 'Version lock')
+
+## 2. Competition data not found  (trigger: config/settings.json "data_dir": "../no_such_folder") -> stops, exit code 1
+[run_all] competition data not found: test_series.parquet, sample_submission.csv missing in <copy>\no_such_folder - put the competition files there or set "data_dir" in config/settings.json
+
+## 3. Verify mismatch  (trigger: three values of the copy's submission.csv shifted by 3e-15, i.e. last-digit noise) -> reports size, exit code 1
+[verify] recomputed dc335464fec173ae2cf42996dfdfb67b vs submission.csv e6c4f6846c30b7c64006f798ce1737db -> DIFFERENT
+[verify] NOT byte-identical: 3 of 4000 values differ, max |diff| 3.000e-15, ranking identical: True. Small last-digit differences are expected with package versions other than the pinned ones (REPRODUCE.md, 'Version lock').
